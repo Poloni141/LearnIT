@@ -1,18 +1,17 @@
 import React from "react";
 import Counter from "../Counter/Counter";
 
-function ItemDetail(book) {
-  const { book: book1 } = book;
-  console.log(book1);
+function ItemDetail({ book }) {
+  console.log(book);
   return (
     <article className="itemDetail">
-      <h1>{book1.title}</h1>
+      <h1>{book.title}</h1>
       <section className="imgContainer">
-        <img src={book1.img} alt={book1.title}></img>
+        <img src={book.img} alt={book.title}></img>
       </section>
       <section>
-        <h3>{book1.title}</h3>
-        <p>{book1.detail}</p>
+        <h3>{book.title}</h3>
+        <p>{book.detail}</p>
       </section>
       <section>
         <Counter />

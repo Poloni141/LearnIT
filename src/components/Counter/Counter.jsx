@@ -23,7 +23,6 @@ function Counter(stock, initial) {
       <Button onClick={substract} variant="contained">
         -
       </Button>
-
       <Button onClick={add} variant="contained">
         +
       </Button>

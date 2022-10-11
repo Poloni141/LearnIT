@@ -5,7 +5,7 @@ import Flex from "../Flex/Flex";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer(props) {
-  const [book, setBook] = useState();
+  const [book, setBook] = useState([]);
   const { itemID } = useParams();
 
   useEffect(() => {
