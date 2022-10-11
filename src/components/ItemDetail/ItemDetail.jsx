@@ -2,7 +2,6 @@ import React from "react";
 import Counter from "../Counter/Counter";
 
 function ItemDetail({ book }) {
-  console.log(book);
   return (
     <article className="itemDetail">
       <h1>{book.title}</h1>
@@ -14,7 +13,7 @@ function ItemDetail({ book }) {
         <p>{book.detail}</p>
       </section>
       <section>
-        <Counter />
+        <Counter stock={book.stock} />
       </section>
     </article>
   );

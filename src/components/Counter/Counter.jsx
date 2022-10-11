@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Flex from "../Flex/Flex";
 
-function Counter(stock, initial) {
+function Counter({ stock, initial = 1 }) {
   const [count, setCount] = useState(initial);
 
   function substract() {
@@ -19,15 +20,18 @@ function Counter(stock, initial) {
   }
 
   return (
-    <>
-      <Button onClick={substract} variant="contained">
-        -
-      </Button>
-      <Button onClick={add} variant="contained">
-        +
-      </Button>
-      <Button variant="outlined">Buy now</Button>
-    </>
+    <div>
+      <Flex>
+        <Button onClick={substract} variant="contained">
+          -
+        </Button>
+        <h3>{count}</h3>
+        <Button onClick={add} variant="contained">
+          +
+        </Button>
+        <Button variant="outlined">Buy now</Button>
+      </Flex>
+    </div>
   );
 }
 
