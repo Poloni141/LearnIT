@@ -56,16 +56,20 @@ export function getAllBooks() {
 }
 
 export function getBook(idParams) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         let bookRequired = database.find((item) => {
             return item.id === Number(idParams)
         })
-        setTimeout(() => resolve(bookRequired), 1000)
+        setTimeout(() =>  {if (bookRequired === undefined) {
+            reject(new Error("We couldn't find that book"))
+            } else {
+                resolve(bookRequired) 
+            }
+        }, 1000)
     })
 }
 
-
-console.log('get book' + getBook(2).then((book) => {console.log(book)}))
+//console.log('get book' + getBook(2).then((book) => {console.log(book)}))
 
 export function getBooksByCategory(idCategoryParams) {
     return new Promise((resolve) => {

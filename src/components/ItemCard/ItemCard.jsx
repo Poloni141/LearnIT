@@ -27,7 +27,10 @@ export default function ItemCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to={`/book/${props.id}`}>
+        <Link
+          style={{ textDecoration: "none", color: "white" }}
+          to={`/book/${props.id}`}
+        >
           <Button variant="outlined" size="large">
             BUY
           </Button>

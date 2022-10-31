@@ -12,8 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 const pages = ["programming", "cybersecurity", "design"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -134,7 +134,7 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <ShoppingCartIcon />
+            <CartWidget />
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
