@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { createBuyOrder } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
-
+import InputForm from "./InputForm";
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2/dist/sweetalert2.js";
-
-import InputForm from "./InputForm";
 
 function UserForm({ cart, getTotalPrice }) {
   const navigate = useNavigate();
@@ -37,12 +35,12 @@ function UserForm({ cart, getTotalPrice }) {
 
     createBuyOrder(orderData).then((response) => {
       Swal.fire({
-        title: "Gracias!",
-        text: "Gracias por tu compra",
+        title: "Thanks! Your order number is...",
+        text: response,
         icon: "success",
-        confirmButtonText: "Cool",
+        confirmButtonText: "Home",
       }).then((result) => {
-        navigate(`/thankyou/${response}`);
+        navigate("/");
       });
     });
   }

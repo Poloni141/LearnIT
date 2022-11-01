@@ -29,7 +29,8 @@ function Counter({ stock, initial = 1, onAdd }) {
           +
         </Button>
         <Button
-          variant="outlined"
+          variant="contained"
+          color="success"
           onClick={() => {
             onAdd(count);
           }}
