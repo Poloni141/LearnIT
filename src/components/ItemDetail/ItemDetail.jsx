@@ -8,15 +8,13 @@ import Loader from "../Loader/Loader";
 function ItemDetail({ book }) {
   const [count, setCount] = useState(0);
   const { addToCart } = useContext(cartContext);
-  const { isInCart } = useContext(cartContext);
-  console.log("carcontext:", cartContext);
 
   function handleAdd(count) {
     addToCart(book, count);
     setCount(count);
   }
 
-  if (book.title) {
+  if (book.id) {
     return (
       <article className="itemDetail">
         <h1>{book.title}</h1>

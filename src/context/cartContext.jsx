@@ -6,10 +6,17 @@ function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
   function addToCart(item, count) {
-    let newCart = [...cart];
-    let newItem = { ...item, count };
-    newCart.push(newItem);
-    setCart(newCart);
+    if (isInCart(item.id)) {
+      setCart(
+        cart.map((product) => {
+          return product.id === item.id
+            ? { ...product, count: product.count + count }
+            : product;
+        })
+      );
+    } else {
+      setCart([...cart, { ...item, count }]);
+    }
   }
 
   function removeItem(idToRemove) {
@@ -31,6 +38,14 @@ function CartContextProvider(props) {
 
   const isInCart = (id) => cart.some((prod) => prod.id === id);
 
+  function getTotalPrice() {
+    let total = 0;
+    cart.forEach((itemInCart) => {
+      total = total + itemInCart.count * itemInCart.price;
+    });
+    return total;
+  }
+
   return (
     <>
       <cartContext.Provider
@@ -41,6 +56,7 @@ function CartContextProvider(props) {
           getTotalItemCount,
           resetCart,
           isInCart,
+          getTotalPrice,
         }}
       >
         {props.children}

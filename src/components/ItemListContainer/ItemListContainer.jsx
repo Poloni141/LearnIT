@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
-import { getAllBooks, getBooksByCategory } from "../../mockAPI";
+import { getAllBooks, getBooksByCategory } from "../../services/firebase";
 import Loader from "../Loader/Loader";
 
 const ItemListContainer = (props) => {

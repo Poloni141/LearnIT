@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getBook } from "../../mockAPI";
+import { getBook } from "../../services/firebase";
 import Flex from "../Flex/Flex";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
